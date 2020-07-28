@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
         while (true)
         {
 
-			yield return new WaitUntil(() => isShootAllowed == true);
+			//yield return new WaitUntil(() => isShootAllowed == true);
 
 
 			Vector3 origin = transform.position;
