@@ -1,0 +1,1243 @@
+fileFormatVersion: 2
+guid: f698cdd5fbbb75b4b802ed9f69c6293f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8022891504176003300
+    second: Ultimate sprite_0
+  - first:
+      213: -4369473800701283101
+    second: Ultimate sprite_1
+  - first:
+      213: 3961854183446654594
+    second: Ultimate sprite_2
+  - first:
+      213: -4275130942589418902
+    second: Ultimate sprite_3
+  - first:
+      213: -1954802616308936229
+    second: Ultimate sprite_4
+  - first:
+      213: -7507704832389027545
+    second: Ultimate sprite_5
+  - first:
+      213: -4020592095078243037
+    second: Ultimate sprite_6
+  - first:
+      213: -3923805043223502440
+    second: Ultimate sprite_7
+  - first:
+      213: -5382230980125087304
+    second: Ultimate sprite_8
+  - first:
+      213: 1253577692926500594
+    second: Ultimate sprite_9
+  - first:
+      213: -9009094237438648063
+    second: Ultimate sprite_10
+  - first:
+      213: 8151132700262572258
+    second: Ultimate sprite_11
+  - first:
+      213: -2351380779802702590
+    second: Ultimate sprite_12
+  - first:
+      213: 265503507444427855
+    second: Ultimate sprite_13
+  - first:
+      213: -8933836981940191516
+    second: Ultimate sprite_14
+  - first:
+      213: -2542365157694656285
+    second: Ultimate sprite_15
+  - first:
+      213: 8347839401131402052
+    second: Ultimate sprite_16
+  - first:
+      213: 8366003007946093159
+    second: Ultimate sprite_17
+  - first:
+      213: 3753683742013085778
+    second: Ultimate sprite_18
+  - first:
+      213: 9184321841928677257
+    second: Ultimate sprite_19
+  - first:
+      213: 3556484119073591194
+    second: Ultimate sprite_20
+  - first:
+      213: 1731483893856182634
+    second: Ultimate sprite_21
+  - first:
+      213: -8364186047423227326
+    second: Ultimate sprite_22
+  - first:
+      213: 3594748450078888026
+    second: Ultimate sprite_23
+  - first:
+      213: 8586388722241654516
+    second: Ultimate sprite_24
+  - first:
+      213: 4794764902647049514
+    second: Ultimate sprite_25
+  - first:
+      213: 8361914002221338055
+    second: Ultimate sprite_26
+  - first:
+      213: -5387688820861077507
+    second: Ultimate sprite_27
+  - first:
+      213: 7720345246728328820
+    second: Ultimate sprite_28
+  - first:
+      213: -5694510857213539567
+    second: Ultimate sprite_29
+  - first:
+      213: 4584655497125178697
+    second: Ultimate sprite_30
+  - first:
+      213: 2794490592738837985
+    second: Ultimate sprite_31
+  - first:
+      213: -6894553077293493113
+    second: Ultimate sprite_32
+  - first:
+      213: -3805811275337595887
+    second: Ultimate sprite_33
+  - first:
+      213: -4596235960551996765
+    second: Ultimate sprite_34
+  - first:
+      213: 6017805603365854108
+    second: Ultimate sprite_35
+  - first:
+      213: 1598932575518309779
+    second: Ultimate sprite_36
+  - first:
+      213: -1683862324986078850
+    second: Ultimate sprite_37
+  - first:
+      213: -7626127950996742607
+    second: Ultimate sprite_38
+  - first:
+      213: 1919075421099665410
+    second: Ultimate sprite_39
+  - first:
+      213: -4590902317085417652
+    second: Ultimate sprite_40
+  - first:
+      213: 7191302387687944955
+    second: Ultimate sprite_41
+  - first:
+      213: 7404362063228519769
+    second: Ultimate sprite_42
+  - first:
+      213: 1065077487877800804
+    second: Ultimate sprite_43
+  - first:
+      213: 2061504456494880279
+    second: Ultimate sprite_44
+  - first:
+      213: 7230129500967460011
+    second: Ultimate sprite_45
+  - first:
+      213: 2905510542915778352
+    second: Ultimate sprite_46
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ultimate sprite_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 950
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbcf2deff17dbc47973e7fb6c916830
+      internalID: -8022891504176003300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 950
+        width: 13
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf662ffa24f3114e82c528266cce460
+      internalID: -4369473800701283101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 950
+        width: 13
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47acaf956b332444492658c4b413673d
+      internalID: 3961854183446654594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_3
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 907
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3ad9c75808f1c47b69a175a73e3df8
+      internalID: -4275130942589418902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_4
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 942
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149a9b9d577cc804a96a01e8f7edd574
+      internalID: -1954802616308936229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_5
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 899
+        width: 74
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ce7f189a3d1bf48a0e029a1a3287c6
+      internalID: -7507704832389027545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_6
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 904
+        width: 31
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d826a714fd31f594aa0918dadb2655b2
+      internalID: -4020592095078243037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_7
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 975
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1606d68a4f0f45b439f5ca1cd1f64027
+      internalID: -3923805043223502440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_8
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 986
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbfd45284db5fd54ab040b0cab3373c6
+      internalID: -5382230980125087304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_9
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 902
+        width: 59
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c516a30795b0bf740989bfd6bd6f59dc
+      internalID: 1253577692926500594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_10
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 975
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0985071d4d864cc4b8e8e26a891a3022
+      internalID: -9009094237438648063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_11
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 986
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a9e762e8ed29a4f8c645396c8a0ed6
+      internalID: 8151132700262572258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_12
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 866
+        width: 65
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e9f10059b80f8f4799bb7886f564a6e
+      internalID: -2351380779802702590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_13
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 943
+        width: 102
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df708b5a78fbd5749bc76db37f0b8b4c
+      internalID: 265503507444427855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_14
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 975
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88926adbceab0a942a5318f141809c4e
+      internalID: -8933836981940191516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_15
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 975
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63a4f7381e55f85459cdb9b85d90c159
+      internalID: -2542365157694656285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_16
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 897
+        width: 64
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7124b50d8a80148bedf833a356a952
+      internalID: 8347839401131402052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_17
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 906
+        width: 52
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64571ced80281854684168d67cef741c
+      internalID: 8366003007946093159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_18
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 922
+        width: 24
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f991bd04a3f545f4aaced72a0d555b5e
+      internalID: 3753683742013085778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_19
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 921
+        width: 13
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b0070cf1a2c5c45bc0d36c12e45ef9
+      internalID: 9184321841928677257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_20
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 921
+        width: 13
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454941bc32acc264d8feca00f39eb985
+      internalID: 3556484119073591194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_21
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 898
+        width: 102
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f614bf1b54ab004e96ac454624776cb
+      internalID: 1731483893856182634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_22
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 934
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa7e1be1cb7c834da713163f77af63f
+      internalID: -8364186047423227326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_23
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 934
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17627fac9f924a24a8a3550027f8e633
+      internalID: 3594748450078888026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_24
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 877
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a92942db7438de45a8c5b0ed803d032
+      internalID: 8586388722241654516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_25
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 902
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e468bee215e47d4d8114761e28d0e45
+      internalID: 4794764902647049514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_26
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 909
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c2016365c6567649a0c015264756f15
+      internalID: 8361914002221338055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_27
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 909
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56224368ecf28d746891d65d31214cc7
+      internalID: -5387688820861077507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_28
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 902
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8ba372c3efa6244869dcee2778500f
+      internalID: 7720345246728328820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_29
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 893
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a178d1e14befe642a52b7b802c40a96
+      internalID: -5694510857213539567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_30
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 893
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c181ff47bd5c889418507d825f0b8f95
+      internalID: 4584655497125178697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_31
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 827
+        width: 22
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc10a89271dc56145a50152e1179b8f3
+      internalID: 2794490592738837985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_32
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 790
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9c1944573041f4091d9fd0b1ab1e5f
+      internalID: -6894553077293493113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_33
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 685
+        width: 114
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf891ea8b9f4294fbfac470489d2612
+      internalID: -3805811275337595887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_34
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 685
+        width: 114
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6262fdb2d9510ca4a92b5851cc6f3470
+      internalID: -4596235960551996765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_35
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 783
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30d51ddc286527140a90dc81977579c6
+      internalID: 6017805603365854108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_36
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 516
+        width: 140
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704d6c1f4b7a9e544a075000d414ef19
+      internalID: 1598932575518309779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_37
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 482
+        width: 183
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ad9d9330cf08104288a37c9a36bd285
+      internalID: -1683862324986078850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_38
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 188
+        width: 488
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20455f914317724cae2016afe2dfac9
+      internalID: -7626127950996742607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_39
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 16
+        width: 156
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a9642e5c0159d46b7dff2c7f32b138
+      internalID: 1919075421099665410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_40
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 16
+        width: 156
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a86ea02ed832740867893ee5214468
+      internalID: -4590902317085417652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_41
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 8
+        width: 156
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c621ae6e4e6a54999998edda2a9b5c
+      internalID: 7191302387687944955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_42
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 18
+        width: 125
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f32298b6444c54c8cfe899c4e347a7
+      internalID: 7404362063228519769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_43
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 131
+        width: 182
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51141da21ee90cf4681b7020866566a0
+      internalID: 1065077487877800804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_44
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 12
+        width: 109
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 224cfb14df8e79b4194d9e7c769dca70
+      internalID: 2061504456494880279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_45
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 70
+        width: 182
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b46d2a7200f4e4e889bda2e3b6b0f6
+      internalID: 7230129500967460011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate sprite_46
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 9
+        width: 182
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e3fc5673614d69469ba5cc3a8ff024f
+      internalID: 2905510542915778352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
