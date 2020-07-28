@@ -20,7 +20,8 @@ public class ScoreManager : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI currLvelTex;
 	[SerializeField] private TextMeshProUGUI nextLvelTex;
 	[SerializeField] private Slider lvelSlider;
-	[SerializeField] private List<Color> colors;
+	[SerializeField] private List<Color> newColors;
+	[SerializeField] private List<Color> colorss;
 	[SerializeField] private List<int> numbers;
 
 	LevelSettings levelSettings = new LevelSettings();
@@ -143,11 +144,14 @@ public class ScoreManager : MonoBehaviour
 			case 128:
 				index = 6;
 				break;
-			default:
+			case 256:
 				index = 7;
 				break;
+			default:
+				index = 8;
+				break;
 		}
-		return colors[index];
+		return newColors[index];
 	}
 
 }

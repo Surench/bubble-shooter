@@ -138,7 +138,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   numberText: {fileID: 5878523648378953740}
   spriteRenderer: {fileID: 2753942592425445751}
-  startPos: {x: 0, y: 0, z: 0}
   number: 0
   filteredBalls: []
 --- !u!1 &6446374027716125322
@@ -218,7 +217,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
 --- !u!33 &2308465542949108910
 MeshFilter:
   m_ObjectHideFlags: 0

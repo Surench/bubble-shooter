@@ -169,7 +169,7 @@ public class BallController : MonoBehaviour
 		transform.position = startPos;
 		this.number = 0;
 		color = Color.white;
-		color.a = 0.2f;
+		color.a = 0f;
 		spriteRenderer.color = color;
 		numberText.text = "";
 	}
