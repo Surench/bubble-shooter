@@ -8,7 +8,7 @@ public class EventAndResponse
 	public string name;
 	public GameEvent gameEvent;
 	public UnityEvent response;
-	public ResponseWithInt responseForSentInt;
+	public ResponseWithBool responseForSentBool;
 
 	public void EventRaised()
 	{
@@ -18,10 +18,10 @@ public class EventAndResponse
 			response.Invoke();
 		}
 
-		// int
-		if (responseForSentInt.GetPersistentEventCount() >= 1)
+		// bool
+		if (responseForSentBool.GetPersistentEventCount() >= 1)
 		{
-			responseForSentInt.Invoke(gameEvent.sentInt);
+			responseForSentBool.Invoke(gameEvent.sentBool);
 		}
 	}
 }
@@ -70,7 +70,6 @@ public class EventListener : MonoBehaviour
 }
 
 [System.Serializable]
-public class ResponseWithInt : UnityEvent<int>
+public class ResponseWithBool : UnityEvent<bool>
 {
 }
-

@@ -32,10 +32,21 @@ public class PlayerController : MonoBehaviour
 		StartPosition = pointerData.position;
 		LastPosition = StartPosition;
 
-
+		FirstTouch();
 		ShowPrediction();
 	}
 
+	private void FirstTouch()
+	{		
+		Vector2 newPos = Camera.main.ScreenToWorldPoint(StartPosition);
+
+		Vector2 direction = new Vector2(
+				newPos.x - DirectionContainer.transform.position.x,
+				newPos.y - DirectionContainer.transform.position.y
+				);
+
+		DirectionContainer.transform.up = direction;		
+	}
 
 	public void TouchDrag(BaseEventData data)
     {
@@ -78,7 +89,6 @@ public class PlayerController : MonoBehaviour
 
 	void ShowPrediction()
 	{
-		Prediction.gameObject.SetActive(true);
 		raycsatCoroutine = StartCoroutine(DoRaycastRoutine());
 	}
 
@@ -105,8 +115,8 @@ public class PlayerController : MonoBehaviour
 
 	IEnumerator DoRaycastRoutine ()
     {
-
-        while (true)
+		Prediction.gameObject.SetActive(true);
+		while (true)
         {
 
 			//yield return new WaitUntil(() => isShootAllowed == true);
@@ -297,18 +307,9 @@ public class PlayerController : MonoBehaviour
 	void ShootingDone()
 	{
 		shootingBall.transform.position = transform.position;
-		currentBallController.ActivateBall(shootingBall.color , shootingBall.number);
+		currentBallController.ActivateBall(shootingBall.color,shootingBall.number);
 		shootingBall.InitAmo();
 		isShootAllowed = true;
-	}
-
-	void UpdateNextAmo()
-	{
-		
-	}
-	void GenerateAmos()
-	{
-
 	}
 
 	IEnumerator AddFirstForce()

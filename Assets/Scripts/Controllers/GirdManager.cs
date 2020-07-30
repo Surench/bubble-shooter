@@ -57,23 +57,33 @@ public class GirdManager : MonoBehaviour
 		return new Vector3(x, y, 0);
 	}
 
+	[SerializeField]List<BallController> TestingBalls; //3 
 	void CreateGrid()
 	{
-		for (int y = 0; y < gridHeight; y++)
+		for (int y = 0; y < gridHeight; y++)//3
 		{
-			for (int x = 0; x < gridWidth; x++)
+			for (int x = 0; x < gridWidth; x++)//6
 			{
 				Transform hex = Instantiate(hexPrefab) as Transform;
 				BallController ballCont = hex.GetComponent<BallController>();
+
 				ballCont.BeRandomized();
+
 				Balls.Add(ballCont);				
+
 				Vector2 gridPos = new Vector2(x, y);
+				//stex tanq if gridPos(x,y) == orinak 32
 				hex.position = CalcWorldPos(gridPos);
+
 				hex.parent = this.transform;
 				hex.name = "Hexagon" + x + "|" + y;
 			}
 		}
 	}
+
+	//es i, j -i poxaren ari grenq x,y -ov positionnerov iranc ancni u vortex irar koxq linen nuyn numbeer unecox hex-er irarnc miacni iar ha?
+
+
 
 	public void LevelPassed()
 	{
@@ -86,7 +96,7 @@ public class GirdManager : MonoBehaviour
 		{
 			item.BeRandomized();
 		}
-	}
+    }
 
 
 }

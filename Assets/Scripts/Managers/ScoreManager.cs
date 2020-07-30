@@ -16,23 +16,26 @@ public class ScoreManager : MonoBehaviour
 {
 
 	[SerializeField] GameEvent levelPassed;
+	[SerializeField] GameEvent gameOver;
 
 	[SerializeField] private TextMeshProUGUI currLvelTex;
 	[SerializeField] private TextMeshProUGUI nextLvelTex;
+	[SerializeField] private TextMeshProUGUI numberText;
 	[SerializeField] private Slider lvelSlider;
 	[SerializeField] private List<Color> newColors;
 	[SerializeField] private List<Color> colorss;
 	[SerializeField] private List<int> numbers;
 
 	LevelSettings levelSettings = new LevelSettings();
-	
+	private readonly string bestScore = "Best:  ";
 
 
 	public static ScoreManager self;
 	private int currentGameLevel;
 	protected int index;
 
-	public int totalScore;
+	public static int totalScore;
+	public int BestScore;
 	public int scoreForNextLvl;
 
 
@@ -52,8 +55,10 @@ public class ScoreManager : MonoBehaviour
 	{
 		self = this;
 		currentGameLevel = DataManager.GetLevelSettings().currentLevel;
+		
 		CalculateScoreForNextLvl();
 		ResetLevelSlider();
+		InitBestScore();
 	}
 
 	public void LevelPassed()
@@ -74,15 +79,29 @@ public class ScoreManager : MonoBehaviour
 	}
 
 	
-	
-
 
 	public void AddScore(int newScore)
 	{
 		totalScore += newScore;
+		UpdateBestScore();
 		if (totalScore >= scoreForNextLvl) levelPassed.Raise();		
 		else UpdateSliderValue();
 				
+	}
+
+	void UpdateBestScore()
+	{
+		BestScore += totalScore;		
+		DataManager.SetBestScore(BestScore);
+		string textScore = "";
+		if (BestScore > 1000) textScore = ((float)BestScore / 1000).ToString() + "K";
+		numberText.text = bestScore + textScore;
+	}
+
+	void InitBestScore()
+	{
+		BestScore = DataManager.GetBestScore();
+		numberText.text = bestScore+ BestScore.ToString();
 	}
 
 	void UpdateSliderValue()
@@ -109,12 +128,16 @@ public class ScoreManager : MonoBehaviour
 
 	void CalculateScoreForNextLvl()
 	{
-		if (currentGameLevel < 3) scoreForNextLvl = 500;
-		else if (currentGameLevel < 6) scoreForNextLvl = 800;
-		else scoreForNextLvl = 1000;
+		if (currentGameLevel < 3) scoreForNextLvl = 300;
+		else if (currentGameLevel < 6) scoreForNextLvl = 500;
+		else scoreForNextLvl = 700;
 	}
 		
-	
+	public void GameOver()
+	{
+		gameOver.Raise();
+	}
+
 	public int GetNumber(int index)
 	{
 		return numbers[index];

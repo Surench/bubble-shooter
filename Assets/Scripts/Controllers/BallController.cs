@@ -13,6 +13,7 @@ public class BallController : MonoBehaviour
 
 	[SerializeField] private TextMeshPro numberText;
 	[SerializeField] private SpriteRenderer spriteRenderer;
+	[SerializeField] private SpriteRenderer shadowRenderer;
 
 	private readonly string ballLayer = "Ball";
 	private readonly string predictionLayer = "Prediction";
@@ -21,6 +22,9 @@ public class BallController : MonoBehaviour
 	private Vector3 startPos;
 
 	private Color color;
+	private Color shadowColor = Color.white;
+	private float moveDuration;
+	public bool lastball;
 	public int number;
 	
 
@@ -35,13 +39,15 @@ public class BallController : MonoBehaviour
 	{
 		gameObject.layer = LayerMask.NameToLayer(ballLayer);
 
-		int random = Random.Range(0, 8);
+		int random = Random.Range(0, 6); //was 8
 
 		number = ScoreManager.self.GetNumber(random);
 		color = ScoreManager.self.GetNewColor(number);
 
 		numberText.text = number.ToString();
+		shadowColor.a = 0.2f;
 		spriteRenderer.color = color;
+		shadowRenderer.color = shadowColor;		
 
 		StartCoroutine(SmoothStart());
 	}
@@ -53,7 +59,6 @@ public class BallController : MonoBehaviour
 		float graphV = 0;
 		float startTime = Time.time;
 		Vector3 finalScale = transform.localScale;
-		Vector3 startScale = Vector3.zero;
 		while (t<1)
 		{
 			t = (Time.time - startTime) / randomDuration;
@@ -67,80 +72,130 @@ public class BallController : MonoBehaviour
 
 
 
-
-
-
 	public void ActivateBall(Color newColor,int number)
 	{
 		this.number = number;
 		this.color = newColor;
 		gameObject.layer = LayerMask.NameToLayer(ballLayer);
 
-		newColor.a = 1;		
+		newColor.a = 1;
+		shadowColor.a = 0.2f;
 		spriteRenderer.color = newColor;
+		shadowRenderer.color = shadowColor;
 		numberText.text = number.ToString();
 
-		FindSimilarBalls();
-		FilterFoundedBalls();
-		UpdateBallScore(); 
+		if (!lastball) StartChainSearch();
+		else ScoreManager.self.GameOver();
+		
 	}
 
-	
-	[SerializeField] List<BallController> filteredBalls = new List<BallController>();
-	List<BallController> colliders = new List<BallController>();
-
-	public void FindSimilarBalls()
+	public void StartChainSearch()
 	{
-		filteredBalls.Clear();
-		colliders.Clear();
+		RegisterBallToChain();
 
+		FindSimilarBalls(number, false);
+	}
+
+
+	[SerializeField] List<BallController> neighborBalls = new List<BallController>();
+	[SerializeField] List<BallController> filteredBalls = new List<BallController>();
+
+	public void FindSimilarBalls(int searchNum,bool extraSearch)
+	{
 		RaycastHit2D[] hits = new RaycastHit2D[6];		
 		ContactFilter2D filter = new ContactFilter2D() { };
-		
-		int numHits = Physics2D.CircleCast(transform.position,0.6f,Vector3.zero, filter,hits);
+
+		int numHits = Physics2D.CircleCast(transform.position,0.5f,Vector3.zero, filter,hits);
 			   	
 		for (int i = 0; i < numHits; i++)
 		{
 			BallController ball = hits[i].collider.GetComponent<BallController>();
 
-			if (ball !=null) colliders.Add(ball);			
+			if (ball !=null) neighborBalls.Add(ball);			
 		}
 
-		
-	}
-
-	void FilterFoundedBalls()
-	{		
-		foreach (BallController ball in colliders)
+		foreach (BallController ball in neighborBalls)
 		{
-			if ((ball.number == number) && (ball != this))
+			if (ball.number.Equals(searchNum)) 
 			{
 				filteredBalls.Add(ball);
-			}
+				if (extraSearch) BallsManager.self.FounderOfExtraBall(this);				
+			} 			
 		}
 
-		for (int i = 0; i < filteredBalls.Count; i++)
+		foreach (var item in filteredBalls)
 		{
-			filteredBalls[i].MoveToSimilarBall(transform);
-			number += filteredBalls[i].number;
+			if(extraSearch) item.RegusterExtraBall();
+			else item.RegisterBallToChain();
 		}
+
+		if (extraSearch) ExtraSearchDone();		
+		else SearchDone();
 		
-	}	
+		
+	}
+		
 
-	void UpdateBallScore()
-	{	
-		if (filteredBalls.Count > 0) 
-		{
-			number = GetFinalScore(number);
-			color = ScoreManager.self.GetNewColor(number);
-			spriteRenderer.color = color;
-			numberText.text = number.ToString();
-			ScoreManager.self.AddScore(number);
-		}
+	void ExtraSearchDone()
+	{
+		
 	}
 
-	public void MoveToSimilarBall(Transform ballPos)
+	void SearchDone()
 	{
+		BallsManager.self.ContinueChainSearch();
+		neighborBalls.Clear();
+		filteredBalls.Clear();
+	}
+
+	public void RegisterBallToChain()
+	{		
+		BallsManager.self.AddToChain(this);		
+	}
+
+	private void RegusterExtraBall()
+	{
+		BallsManager.self.AddToExtraChain(this);
+	}
+
+	void CheckIsTheBallAlone()
+	{
+		filteredBalls.Clear();
+		neighborBalls.Clear();
+
+		//FindSimilarBalls();
+
+		if (neighborBalls.Count > 0) 
+		{
+			for (int i = 0; i < neighborBalls.Count; i++)
+			{
+				print(neighborBalls[i].name);
+			}
+			
+		}
+		else
+		{
+			print("Alone");
+		}
+
+
+	}
+
+	public void UpdateFinalScore(int multiplier)
+	{		
+		number *= multiplier;
+		number = GetFinalScore(number);
+		ScoreManager.self.AddScore(number);
+
+		numberText.text = number.ToString();
+
+		color = ScoreManager.self.GetNewColor(number);
+		spriteRenderer.color = color;
+	}
+
+	public void MoveToSimilarBall(Transform ballPos,float moveDuration)
+	{
+		this.moveDuration = moveDuration;
 		this.similarBall = ballPos;
 		UpdateBallPosC = StartCoroutine(UpdateBallPos());
 	}
@@ -148,14 +203,15 @@ public class BallController : MonoBehaviour
 	Coroutine UpdateBallPosC;
 	IEnumerator UpdateBallPos()
 	{
-		float startTime = Time.time;
-		float duration = 0.2f;
+		numberText.text = "";
+
+		float startTime = Time.time;		
 		float t = 0;
 		Vector3 starTPos = transform.position;
-
+		
 		while (t<1)
 		{
-			t = (Time.time - startTime) / duration;
+			t = (Time.time - startTime) / moveDuration;
 			transform.position = Vector3.Lerp(starTPos, similarBall.position, t);
 			yield return new WaitForEndOfFrame();
 		}
@@ -168,15 +224,18 @@ public class BallController : MonoBehaviour
 		gameObject.layer = LayerMask.NameToLayer(predictionLayer);
 		transform.position = startPos;
 		this.number = 0;
-		color = Color.white;
-		color.a = 0f;
+		color = Color.white; shadowColor = Color.white;
+		color.a = 0f; shadowColor.a = 0;
+
+		shadowRenderer.color = shadowColor;
 		spriteRenderer.color = color;
 		numberText.text = "";
 	}
 
-	int GetFinalScore(int currScore)
+	public int GetFinalScore(int currScore)
 	{
-		if (currScore <=4) currScore = 4;
+		if (currScore <= 2) currScore = 2;
+		else if(currScore <=4) currScore = 4;
 		else if (currScore <= 8) currScore = 8;		
 		else if (currScore <= 16) currScore = 16;		
 		else if (currScore <= 32) currScore = 32;
@@ -186,6 +245,7 @@ public class BallController : MonoBehaviour
 		else if (currScore <= 512) currScore = 512;
 		else if (currScore <= 1024) currScore = 1024;
 		else if (currScore <= 2048) currScore = 2048;
+		else currScore = 2048;
 		
 		return currScore;
 	}
