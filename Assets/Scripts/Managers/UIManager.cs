@@ -26,4 +26,9 @@ public class UIManager : MonoBehaviour
 		anim.SetTrigger("LevelLost");
 	}
 
+	public void ComboAnim ()
+	{
+		anim.SetTrigger("2X");
+	}
+
 }

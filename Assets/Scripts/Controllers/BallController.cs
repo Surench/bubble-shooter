@@ -11,35 +11,35 @@ public class BallController : MonoBehaviour
 	[HeaderAttribute("Animation Curve")]
 	public AnimationCurve animCurve;
 
+	[SerializeField] Animator anim;
 	[SerializeField] private TextMeshPro numberText;
+	[SerializeField] private TextMeshPro animNumberText;
 	[SerializeField] private SpriteRenderer spriteRenderer;
 	[SerializeField] private SpriteRenderer shadowRenderer;
+	[SerializeField] private ParticleSystem explosionParticle;
 
 	private readonly string ballLayer = "Ball";
 	private readonly string predictionLayer = "Prediction";
+	private readonly string animTrigger = "UpdateText";
 
+	private Coroutine UpdateBallPosC;
 	private Transform similarBall;
-	private Vector3 startPos;
+	public Vector3 startPos;
 
 	private Color color;
 	private Color shadowColor = Color.white;
 	private float moveDuration;
 	public bool lastball;
 	public int number;
+	public int index;
+	
 	
 
-	public void Start()
-	{
-		startPos = transform.position;
-	}
-
-
-
-	public void BeRandomized()
+	public void InitBall()
 	{
 		gameObject.layer = LayerMask.NameToLayer(ballLayer);
 
-		int random = Random.Range(0, 6); //was 8
+		int random = Random.Range(0, 8); 
 
 		number = ScoreManager.self.GetNumber(random);
 		color = ScoreManager.self.GetNewColor(number);
@@ -50,27 +50,8 @@ public class BallController : MonoBehaviour
 		shadowRenderer.color = shadowColor;		
 
 		StartCoroutine(SmoothStart());
-	}
+	}	
 	
-	IEnumerator SmoothStart()
-	{
-		float randomDuration = Random.Range(0f, 0.6f);
-		float t = 0;
-		float graphV = 0;
-		float startTime = Time.time;
-		Vector3 finalScale = transform.localScale;
-		while (t<1)
-		{
-			t = (Time.time - startTime) / randomDuration;
-
-			graphV = animCurve.Evaluate(t);
-			transform.localScale = finalScale * graphV;
-
-			yield return new WaitForEndOfFrame();
-		}
-	}
-
-
 
 	public void ActivateBall(Color newColor,int number)
 	{
@@ -84,140 +65,9 @@ public class BallController : MonoBehaviour
 		shadowRenderer.color = shadowColor;
 		numberText.text = number.ToString();
 
-		if (!lastball) StartChainSearch();
-		else ScoreManager.self.GameOver();
-		
+		GirdManager.self.FirstHit(index, number);
 	}
 
-	public void StartChainSearch()
-	{
-		RegisterBallToChain();
-
-		FindSimilarBalls(number, false);
-	}
-
-
-	[SerializeField] List<BallController> neighborBalls = new List<BallController>();
-	[SerializeField] List<BallController> filteredBalls = new List<BallController>();
-
-	public void FindSimilarBalls(int searchNum,bool extraSearch)
-	{
-		RaycastHit2D[] hits = new RaycastHit2D[6];		
-		ContactFilter2D filter = new ContactFilter2D() { };
-
-		int numHits = Physics2D.CircleCast(transform.position,0.5f,Vector3.zero, filter,hits);
-			   	
-		for (int i = 0; i < numHits; i++)
-		{
-			BallController ball = hits[i].collider.GetComponent<BallController>();
-
-			if (ball !=null) neighborBalls.Add(ball);			
-		}
-
-		foreach (BallController ball in neighborBalls)
-		{
-			if (ball.number.Equals(searchNum)) 
-			{
-				filteredBalls.Add(ball);
-				if (extraSearch) BallsManager.self.FounderOfExtraBall(this);				
-			} 			
-		}
-
-		foreach (var item in filteredBalls)
-		{
-			if(extraSearch) item.RegusterExtraBall();
-			else item.RegisterBallToChain();
-		}
-
-		if (extraSearch) ExtraSearchDone();		
-		else SearchDone();
-		
-		
-	}
-		
-
-	void ExtraSearchDone()
-	{
-		
-	}
-
-	void SearchDone()
-	{
-		BallsManager.self.ContinueChainSearch();
-		neighborBalls.Clear();
-		filteredBalls.Clear();
-	}
-
-	public void RegisterBallToChain()
-	{		
-		BallsManager.self.AddToChain(this);		
-	}
-
-	private void RegusterExtraBall()
-	{
-		BallsManager.self.AddToExtraChain(this);
-	}
-
-	void CheckIsTheBallAlone()
-	{
-		filteredBalls.Clear();
-		neighborBalls.Clear();
-
-		//FindSimilarBalls();
-
-		if (neighborBalls.Count > 0) 
-		{
-			for (int i = 0; i < neighborBalls.Count; i++)
-			{
-				print(neighborBalls[i].name);
-			}
-			
-		}
-		else
-		{
-			print("Alone");
-		}
-
-
-	}
-
-	public void UpdateFinalScore(int multiplier)
-	{		
-		number *= multiplier;
-		number = GetFinalScore(number);
-		ScoreManager.self.AddScore(number);
-
-		numberText.text = number.ToString();
-
-		color = ScoreManager.self.GetNewColor(number);
-		spriteRenderer.color = color;
-	}
-
-	public void MoveToSimilarBall(Transform ballPos,float moveDuration)
-	{
-		this.moveDuration = moveDuration;
-		this.similarBall = ballPos;
-		UpdateBallPosC = StartCoroutine(UpdateBallPos());
-	}
-
-	Coroutine UpdateBallPosC;
-	IEnumerator UpdateBallPos()
-	{
-		numberText.text = "";
-
-		float startTime = Time.time;		
-		float t = 0;
-		Vector3 starTPos = transform.position;
-		
-		while (t<1)
-		{
-			t = (Time.time - startTime) / moveDuration;
-			transform.position = Vector3.Lerp(starTPos, similarBall.position, t);
-			yield return new WaitForEndOfFrame();
-		}
-		
-		DeActivateBall();
-	}
 
 	public void DeActivateBall()
 	{
@@ -232,22 +82,79 @@ public class BallController : MonoBehaviour
 		numberText.text = "";
 	}
 
-	public int GetFinalScore(int currScore)
+
+	public void MoveToSimilarBall(Transform ballPos, float moveDuration)
 	{
-		if (currScore <= 2) currScore = 2;
-		else if(currScore <=4) currScore = 4;
-		else if (currScore <= 8) currScore = 8;		
-		else if (currScore <= 16) currScore = 16;		
-		else if (currScore <= 32) currScore = 32;
-		else if (currScore <= 64) currScore = 64;
-		else if (currScore <= 128) currScore = 128;
-		else if (currScore <= 256) currScore = 256;
-		else if (currScore <= 512) currScore = 512;
-		else if (currScore <= 1024) currScore = 1024;
-		else if (currScore <= 2048) currScore = 2048;
-		else currScore = 2048;
-		
-		return currScore;
+		ActivateExplosion();
+
+		this.moveDuration = moveDuration;
+		this.similarBall = ballPos;
+		numberText.text = "";
+		UpdateBallPosC = StartCoroutine(UpdateBallPos());	
 	}
 
+
+	public void UpdateFinalScore(int multiplier)
+	{		
+		this.number = multiplier;
+
+		numberText.text = number.ToString();
+
+		color = ScoreManager.self.GetNewColor(number);
+		spriteRenderer.color = color;
+	}
+
+	public void ActivateAnimation()
+	{
+		animNumberText.text = number.ToString();
+		anim.SetTrigger(animTrigger);
+	}
+
+	IEnumerator SmoothStart()
+	{
+		float randomDuration = Random.Range(0f, 0.6f);
+		float t = 0;
+		float graphV = 0;
+		float startTime = Time.time;
+		Vector3 finalScale = transform.localScale;
+		while (t < 1)
+		{
+			t = (Time.time - startTime) / randomDuration;
+
+			graphV = animCurve.Evaluate(t);
+			transform.localScale = finalScale * graphV;
+
+			yield return new WaitForEndOfFrame();
+		}
+	}
+
+
+	IEnumerator UpdateBallPos()
+	{
+		float startTime = Time.time;		
+		float t = 0;
+		
+		while (t<1)
+		{
+			t = (Time.time - startTime) / moveDuration;
+			transform.position = Vector3.Lerp(startPos, similarBall.position, t);
+			yield return new WaitForEndOfFrame();
+		}
+
+		yield return new WaitForSeconds(0.1f);
+		DeActivateBall();
+	}
+
+	
+
+	void ActivateExplosion()
+	{
+		ParticleSystem.MainModule settings;
+		settings = explosionParticle.main;
+		color.a = 0.4f;
+		settings.startColor = new ParticleSystem.MinMaxGradient(color);
+		explosionParticle.Play();
+	}
+	
+	
 }

@@ -15,8 +15,7 @@ public class GetBallColor : ScoreManager
 public class ScoreManager : MonoBehaviour
 {
 
-	[SerializeField] GameEvent levelPassed;
-	[SerializeField] GameEvent gameOver;
+	[SerializeField] GameEvent levelPassedEvent;
 
 	[SerializeField] private TextMeshProUGUI currLvelTex;
 	[SerializeField] private TextMeshProUGUI nextLvelTex;
@@ -63,6 +62,7 @@ public class ScoreManager : MonoBehaviour
 
 	public void LevelPassed()
 	{
+		levelPassedEvent.Raise();
 		currentGameLevel++;
 		totalScore = 0;
 		CalculateScoreForNextLvl();
@@ -76,16 +76,17 @@ public class ScoreManager : MonoBehaviour
 		lvelSlider.value = 0;
 		currLvelTex.text = (currentGameLevel+1).ToString();
 		nextLvelTex.text = (currentGameLevel +2).ToString();
-	}
+	}		
 
-	
+
 
 	public void AddScore(int newScore)
 	{
 		totalScore += newScore;
 		UpdateBestScore();
-		if (totalScore >= scoreForNextLvl) levelPassed.Raise();		
-		else UpdateSliderValue();
+		UpdateSliderValue();
+		if (totalScore >= scoreForNextLvl) LevelPassed(); 	
+		
 				
 	}
 
@@ -109,7 +110,6 @@ public class ScoreManager : MonoBehaviour
 		StartCoroutine(UpdateSliderValu());
 	}
 
-	
 	IEnumerator UpdateSliderValu()
 	{
 		float time = Time.time;
@@ -126,22 +126,25 @@ public class ScoreManager : MonoBehaviour
 		}
 	}
 
+
+
 	void CalculateScoreForNextLvl()
 	{
-		if (currentGameLevel < 3) scoreForNextLvl = 300;
-		else if (currentGameLevel < 6) scoreForNextLvl = 500;
-		else scoreForNextLvl = 700;
+		if (currentGameLevel < 3) scoreForNextLvl = 850;
+		else if (currentGameLevel < 6) scoreForNextLvl = 1050;
+		else scoreForNextLvl = 1250;
 	}
 		
 	public void GameOver()
 	{
-		gameOver.Raise();
+		ResetLevelSlider();		
 	}
 
 	public int GetNumber(int index)
 	{
 		return numbers[index];
 	}
+
 	public Color GetNewColor(int index)
 	{
 		switch (index)

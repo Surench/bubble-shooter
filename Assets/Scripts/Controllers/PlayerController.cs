@@ -165,6 +165,7 @@ public class PlayerController : MonoBehaviour
 			{
 
 				lineRenderer2.enabled = true;
+				isRebound = true;
 
 				//Second Ray
 				Debug.DrawRay(firstRay.point, currentDirection * 8, Color.green);
@@ -188,6 +189,7 @@ public class PlayerController : MonoBehaviour
 			else if ((firstRay.collider != null) && (firstRay.collider.tag.Equals(ballTag)))
 			{
 				OnOffLines(true, false);
+				isRebound = false;
 
 				currentDirection = (Vector3)firstRay.point - firstRay.collider.transform.position;
 				DoFinalRaycast(firstRay.point, currentDirection.normalized);
@@ -287,6 +289,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private AmoController shootingBall;
 	
 	private bool isShootAllowed;
+	private bool isRebound;
 	private int queue = 0;
 
 	public void SwichShootingBalls()
@@ -316,31 +319,33 @@ public class PlayerController : MonoBehaviour
 	{
 		isShootAllowed = false;
 		float startTime = Time.time;
-		float duration = 0.3f;
+		float duration = 0.35f;
 		float t = 0;
 
 		Vector3 startPos = transform.position;
 		Vector3 endPos = ray1Point;
-		while (t < 1)
+		while (t < 0.9f)
 		{
 			t = (Time.time - startTime) / duration;
 			shootingBall.transform.position = Vector3.Lerp(startPos, endPos, t);
 			yield return new WaitForEndOfFrame();
 		}
 
-		StartCoroutine(AddSecondForce());
+
+		if (isRebound) StartCoroutine(AddSecondForce());
+		else ShootingDone();
 	}
 
 	IEnumerator AddSecondForce()
 	{
 		float startTime = Time.time;
-		float duration = 0.2f;
+		float duration = 0.25f;
 		float t = 0;
 
 		Vector3 startPos = ray1Point;
 		Vector3 endPos = predictedPos;
 
-		while (t < 1)
+		while (t < 1f)
 		{
 			t = (Time.time - startTime) / duration;
 			shootingBall.transform.position = Vector3.Lerp(startPos, endPos, t);
