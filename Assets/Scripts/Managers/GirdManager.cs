@@ -206,6 +206,7 @@ public class GirdManager : MonoBehaviour
 				SimilarNeighburs[j].MoveToSimilarBall(SimilarNeighburs[j - 1].transform, movmentDelay);				
 			}
 
+
 			yield return new WaitForSeconds(0.05f);
 
 			PredictionFounders[0].UpdateFinalScore(newScore);
@@ -227,6 +228,7 @@ public class GirdManager : MonoBehaviour
 			FirstHit(PredictedBalls[0].index, PredictedBalls[0].number);
 			ComobEvent.Raise();
 
+
 		}
 		else
 		{
@@ -242,6 +244,7 @@ public class GirdManager : MonoBehaviour
 				SimilarNeighburs[SimilarNeighburs.Count - 1].ActivateAnimation();
 				ScoreManager.self.AddScore(newScore);
 			}
+
 		}
 	}
 

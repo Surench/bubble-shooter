@@ -1158,7 +1158,7 @@ MonoBehaviour:
   index: 0
   newScore: 0
   startPos: {x: -1.7, y: 3.1, z: 0}
-  waitDelay: 0.5
+  waitDelay: 0.3
   movmentDelay: 0.2
 --- !u!4 &729752971
 Transform:
@@ -1348,7 +1348,7 @@ MonoBehaviour:
   initScoreManager: {fileID: 11400000, guid: 0bb1f73c54d00eb44a0599850e2f010d, type: 2}
   initGridManager: {fileID: 11400000, guid: 61d0f06ccba6e334caac8fafdf1bf3a8, type: 2}
   WinigConfetti: {fileID: 1858799074023812}
-  PerfectAudio: {fileID: 800362964}
+  Audio: {fileID: 800362964}
 --- !u!4 &800362963
 Transform:
   m_ObjectHideFlags: 0
@@ -2575,7 +2575,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1444716532}
-  - component: {fileID: 1444716533}
   - component: {fileID: 1444716531}
   - component: {fileID: 1444716534}
   m_Layer: 0
@@ -2633,25 +2632,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1444716533
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444716530}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6752ed3d9856a9f4bb75166d60c32e65, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1444716534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2880,7 +2860,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.486
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

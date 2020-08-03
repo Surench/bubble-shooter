@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
 	[SerializeField] private float speedRotation;
 	void RotatePlayer()
-	{
+	{		
 		DirectionContainer.transform.Rotate(0, 0, -DeltaPosition.x * Time.deltaTime * speedRotation);
 	}
 
@@ -175,13 +175,19 @@ public class PlayerController : MonoBehaviour
 
 				if (secondRay.collider != null)
 				{
-					OnOffLines(true,true);
+					OnOffLines(true, true);
+					isShootAllowed = true;
 
 					currentDirection = (Vector3)secondRay.point - secondRay.collider.transform.position;
 					DoFinalRaycast(secondRay.point, currentDirection.normalized);
 
 				}
-				else OnOffLines(false, false);
+				else 
+				{
+					OnOffLines(false, false);
+					isShootAllowed = false;
+				}
+			
 				
 
 				
@@ -195,7 +201,6 @@ public class PlayerController : MonoBehaviour
 				DoFinalRaycast(firstRay.point, currentDirection.normalized);
 				
 			}
-			else lineRenderer2.enabled = false;
 			
 
 

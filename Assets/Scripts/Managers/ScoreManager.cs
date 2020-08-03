@@ -63,19 +63,22 @@ public class ScoreManager : MonoBehaviour
 	public void LevelPassed()
 	{
 		levelPassedEvent.Raise();
+		ResetLevelSlider();
 		currentGameLevel++;
 		totalScore = 0;
 		CalculateScoreForNextLvl();
-		ResetLevelSlider();
+		
 		levelSettings.currentLevel = currentGameLevel;
 		DataManager.SetLevelSettings(levelSettings);
 	}
 
 	private void ResetLevelSlider()
 	{
-		lvelSlider.value = 0;
+		//lvelSlider.value = 0;
 		currLvelTex.text = (currentGameLevel+1).ToString();
 		nextLvelTex.text = (currentGameLevel +2).ToString();
+
+		StartCoroutine(ResetSliderValue());
 	}		
 
 
@@ -127,6 +130,20 @@ public class ScoreManager : MonoBehaviour
 	}
 
 
+	IEnumerator ResetSliderValue()
+	{
+		float time = Time.time;
+		float duration = 1f;
+		float t = 0;
+		float startV = lvelSlider.value;		
+		while (t < 1)
+		{
+			t = (Time.time - time) / duration;
+			float v = Mathf.Lerp(startV, 0, t);
+			lvelSlider.value = v;
+			yield return new WaitForEndOfFrame();
+		}
+	}
 
 	void CalculateScoreForNextLvl()
 	{
