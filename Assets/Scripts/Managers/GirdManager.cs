@@ -126,20 +126,24 @@ public class GirdManager : MonoBehaviour
 
 		BallController firstBall = Balls[index].GetComponent<BallController>();
 		SimilarNeighburs.Add(firstBall);
+			
 
 		for (int i = 0; i < neighbourID.Count; i++)
 		{
 			BallController similarBall = Balls[index + neighbourID[i]].GetComponent<BallController>();
+
+
 			if (newScore.Equals(similarBall.number))
 				SimilarNeighburs.Add(similarBall);
 		}
-
-		//****** myusnern gtnumen eli iranc nmanerin
+				
 
 		for (int i = 0; i < SimilarNeighburs.Count; i++)
 		{
 			int ind = SimilarNeighburs[i].index;
 			List<int> newNeighbours = GetNeighboursIndexes(ind);
+
+			
 
 			for (int j = 0; j < newNeighbours.Count; j++)
 			{
@@ -149,8 +153,7 @@ public class GirdManager : MonoBehaviour
 				{
 					SimilarNeighburs.Add(predictedBall);
 				}
-
-			}
+			}			
 		}
 
 		//****** Predection

@@ -5,30 +5,52 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-	private Animator anim; 
-    [SerializeField] private TextMeshProUGUI currLvelTex;
-    [SerializeField] private TextMeshProUGUI lostText;
-	[SerializeField] List<string> texts;
+	[SerializeField] AnimationCurve curve;
 
-	void Start()
-    {
-		anim = GetComponent<Animator>();
-    }
+	[SerializeField] private TextMeshProUGUI currLvelTex;
+    [SerializeField] private TextMeshProUGUI lostText;
+
+	[SerializeField] List<string> winingTexts;
+		
 
     public void LevelUP ()
 	{
-		currLvelTex.text = texts[Random.Range(0, texts.Count)];
-		anim.SetTrigger("LevelUP");	}
+		currLvelTex.text = winingTexts[Random.Range(0, winingTexts.Count)];
+		StartCoroutine(UpdateTextSize(currLvelTex,45));		
+	}
+
+	public void ComboAnim()
+	{
+		currLvelTex.text = "2X";
+		StartCoroutine(UpdateTextSize(currLvelTex,85));
+	}
 
 	public void LevelLost()
 	{
-		lostText.text ="-" + ScoreManager.totalScore.ToString();
-		anim.SetTrigger("LevelLost");
+		lostText.text ="-" + ScoreManager.totalScore.ToString();		
+		StartCoroutine(UpdateTextSize(lostText,20));
 	}
+	
 
-	public void ComboAnim ()
-	{
-		anim.SetTrigger("2X");
+
+	IEnumerator UpdateTextSize(TextMeshProUGUI text, float maxSize)
+	{		
+
+		float cureveTime = 0;
+		float curevAnim = curve.Evaluate(cureveTime);
+
+		while (curevAnim <1)
+		{
+			cureveTime += Time.deltaTime * 1f;
+			curevAnim = curve.Evaluate(cureveTime);
+
+			text.fontSize = (maxSize * curevAnim);
+
+			yield return null;
+		}
+
+		yield return new WaitForSeconds(0.2f);
+
+		text.fontSize = 0;
 	}
-
 }

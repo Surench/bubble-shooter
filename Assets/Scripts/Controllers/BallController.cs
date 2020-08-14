@@ -11,6 +11,9 @@ public class BallController : MonoBehaviour
 	[HeaderAttribute("Animation Curve")]
 	public AnimationCurve animCurve;
 
+	[HeaderAttribute("Animation Bounce")]
+	public AnimationCurve animBounceCurve;
+
 	[SerializeField] Animator anim;
 	[SerializeField] private TextMeshPro numberText;
 	[SerializeField] private TextMeshPro animNumberText;
@@ -37,6 +40,8 @@ public class BallController : MonoBehaviour
 
 	public void InitBall()
 	{
+		
+
 		gameObject.layer = LayerMask.NameToLayer(ballLayer);
 
 		int random = Random.Range(0, 8); 
@@ -82,6 +87,11 @@ public class BallController : MonoBehaviour
 		numberText.text = "";
 	}
 
+	public void BounceTheBall(Transform hitBall)
+	{
+		StartCoroutine(BouncingEffect(hitBall));
+	}
+
 
 	public void MoveToSimilarBall(Transform ballPos, float moveDuration)
 	{
@@ -117,6 +127,9 @@ public class BallController : MonoBehaviour
 		float graphV = 0;
 		float startTime = Time.time;
 		Vector3 finalScale = transform.localScale;
+
+		
+
 		while (t < 1)
 		{
 			t = (Time.time - startTime) / randomDuration;
@@ -145,7 +158,34 @@ public class BallController : MonoBehaviour
 		DeActivateBall();
 	}
 
-	
+	IEnumerator BouncingEffect(Transform hitBall)
+	{
+		animBounceCurve.postWrapMode = WrapMode.PingPong;
+		animBounceCurve.preWrapMode = WrapMode.PingPong;
+
+		float startTime = Time.time;
+		float duration = 0.2f;
+		float t = 0;
+
+		Vector3 dir = hitBall.position - transform.position;
+		Vector3 start = transform.position;
+
+		float x = Mathf.Round(dir.normalized.x);
+		float y = Mathf.Round(dir.normalized.y);
+
+		
+
+		while (t < 2)
+		{
+			t = (Time.time - startTime) / duration;
+
+			transform.position = Vector3.Lerp(startPos, new Vector3((animBounceCurve.Evaluate(t) * x) / 8, (animBounceCurve.Evaluate(t) * y) / 8, 0), t);
+
+			yield return new WaitForEndOfFrame();
+		}
+	}
+
+
 
 	void ActivateExplosion()
 	{
